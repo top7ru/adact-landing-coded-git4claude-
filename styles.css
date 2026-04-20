@@ -2057,3 +2057,390 @@ body.menu-open .nav-toggle span:last-child {
     overflow-wrap: anywhere;
   }
 }
+/* =========================================================
+   ADACT Landing — Post-Hero Redesign (Clinical Velocity)
+   =========================================================
+   DROP-IN PATCH — применяется поверх существующего styles.css.
+   Ничего в оригинале не ломает, только дополняет.
+
+   Способ 1 (рекомендуемый): склеить содержимое этого файла
+     в конец вашего styles.css.
+   Способ 2: подключить вторым тегом после основного:
+     <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="adact-post-hero.patch.css">
+
+   Для смены фонов секций (silver/dark/light) в index.html
+   нужно поменять классы у <section>. Список изменений —
+   в файле index-class-changes.md рядом с этим патчем.
+
+   script.js НЕ требует правок: все id и data-атрибуты сохранены.
+   ========================================================= */
+
+/* ---------- NEW: silver section class ---------- */
+.section-silver {
+  background: var(--color-silver);
+  color: var(--color-ink);
+}
+
+/* ---------- NEW: eyebrow-red (replaces eyebrow-dark on silver + dark) ---------- */
+.eyebrow-red {
+  color: var(--color-red);
+}
+.eyebrow-red .eyebrow-line {
+  background: var(--color-red);
+  opacity: 1;
+}
+
+/* ---------- GLOBAL: h2 underline accent ---------- */
+.section-heading h2::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--color-red);
+  margin-top: 16px;
+}
+
+/* ---------- #benefits : silver + red-bar cards ---------- */
+.advantages {
+  /* section has section-silver applied in HTML */
+}
+.advantage-card {
+  border-left: 3px solid var(--color-red) !important;
+  background: var(--color-white);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+.advantage-card .advantage-index {
+  color: var(--color-red);
+}
+@media (hover: hover) {
+  .advantage-card:hover {
+    transform: translateY(-4px);
+    background: var(--color-white);
+    box-shadow: 0 12px 32px rgba(230, 35, 20, 0.12);
+  }
+}
+
+/* ---------- #when : dark story ---------- */
+.story-section.section-dark .story-card {
+  background: #201f21;
+  border: 1px solid var(--color-ghost);
+  color: var(--color-white);
+}
+.story-section.section-dark .story-card h3 {
+  color: var(--color-white);
+}
+.story-section.section-dark .story-card p {
+  color: rgba(255, 255, 255, 0.76);
+}
+.story-section.section-dark .story-card-index {
+  color: var(--color-red);
+}
+.story-section.section-dark .story-card-kicker {
+  color: rgba(255, 255, 255, 0.58);
+}
+.story-section.section-dark .section-heading h2 {
+  color: var(--color-white);
+}
+.story-section.section-dark .section-heading p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ---------- #trust : red top bar + left-red accents + red numbers ---------- */
+.proof-section {
+  position: relative;
+}
+.proof-section::before {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: var(--color-red);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.proof-grid {
+  background: transparent;
+  gap: 18px;
+}
+.proof-card {
+  border-left: 4px solid var(--color-red);
+  background: var(--color-white);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.proof-card-dark {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+.proof-card-accent {
+  background: var(--color-red);
+  color: var(--color-white);
+  border-left-color: #0a0a0c;
+}
+.proof-value {
+  color: var(--color-red);
+  font-family: var(--font-heading);
+}
+.proof-card-dark .proof-value,
+.proof-card-accent .proof-value {
+  color: inherit;
+}
+@media (hover: hover) {
+  .proof-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(230, 35, 20, 0.12);
+  }
+}
+
+/* ---------- #certificate : dark + radial glow ---------- */
+.certificate-section.section-dark {
+  padding: var(--section-space) 0;
+}
+.certificate-section.section-dark .certificate-banner {
+  background:
+    radial-gradient(ellipse at 90% 0%, rgba(230, 35, 20, 0.12) 0%, transparent 60%),
+    var(--color-black);
+  color: var(--color-white);
+}
+.certificate-section.section-dark .certificate-icon {
+  width: auto;
+  height: auto;
+  background: transparent;
+  font-size: 120px;
+  font-family: var(--font-heading);
+  color: var(--color-red);
+  opacity: 0.9;
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  padding: 0;
+}
+.certificate-section.section-dark .certificate-copy h2,
+.certificate-section.section-dark .certificate-kicker,
+.certificate-section.section-dark .certificate-copy p {
+  color: var(--color-white);
+}
+.certificate-section.section-dark .certificate-kicker {
+  color: var(--color-red);
+}
+.certificate-section.section-dark .certificate-copy p {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+/* ---------- #safety : silver + red-bar cards ---------- */
+.safety-section .story-card {
+  border-left: 3px solid var(--color-red);
+  background: var(--color-white);
+}
+@media (hover: hover) {
+  .safety-section .story-card {
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+  .safety-section .story-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(230, 35, 20, 0.12);
+  }
+}
+
+/* ---------- #power : red numerics, segmented bars ---------- */
+.power-card .power-value strong {
+  color: var(--color-red);
+  font-weight: 800;
+  font-family: var(--font-heading);
+}
+.power-track {
+  height: 18px;
+  background: transparent;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 4px;
+  overflow: visible;
+}
+.power-track .power-fill {
+  display: none;
+}
+.power-track .power-seg {
+  height: 100%;
+  background: rgba(18, 18, 22, 0.08);
+}
+.power-track .power-seg.on {
+  background: var(--color-red);
+}
+
+/* ---------- #selector : dark variant ---------- */
+.selector-section.section-dark {
+  background: var(--color-black);
+}
+.selector-section.section-dark .selector-form-panel {
+  background: transparent;
+  color: var(--color-white);
+  background:
+    radial-gradient(ellipse at 10% 10%, rgba(230, 35, 20, 0.08) 0%, transparent 60%);
+}
+.selector-section.section-dark .selector-form-panel h2,
+.selector-section.section-dark .selector-form-panel .selector-intro,
+.selector-section.section-dark .selector-form-panel .selector-note {
+  color: var(--color-white);
+}
+.selector-section.section-dark .selector-form-panel .selector-intro,
+.selector-section.section-dark .selector-form-panel .selector-note {
+  color: rgba(255, 255, 255, 0.68);
+}
+.selector-section.section-dark .field span {
+  color: rgba(255, 255, 255, 0.58);
+}
+.selector-section.section-dark .field select,
+.selector-section.section-dark .field input {
+  background: #201f21;
+  border: 1px solid var(--color-ghost);
+  color: var(--color-white);
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--color-red) 50%),
+    linear-gradient(135deg, var(--color-red) 50%, transparent 50%);
+  background-position: calc(100% - 22px) 50%, calc(100% - 16px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 44px;
+}
+.selector-section.section-dark .field input {
+  background-image: none;
+  padding-right: 18px;
+}
+.selector-section.section-dark .field select:focus,
+.selector-section.section-dark .field input:focus {
+  border-color: var(--color-red);
+}
+
+/* ---------- #pricing : silver + red numerics ---------- */
+.pricing-section.section-silver .pricing-row strong {
+  color: var(--color-red);
+  font-family: var(--font-heading);
+}
+.pricing-section.section-silver .pricing-row {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+}
+.pricing-section.section-silver .included-card {
+  background: var(--color-white);
+  border: 0;
+  border-left: 3px solid var(--color-red);
+}
+
+/* ---------- #process : dark steps ---------- */
+.process-section.section-dark .process-step {
+  background: #201f21;
+  border: 1px solid var(--color-ghost);
+  padding: 32px;
+}
+.process-section.section-dark .process-index {
+  color: var(--color-red);
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+.process-section.section-dark .process-step h3 {
+  color: var(--color-white);
+}
+.process-section.section-dark .process-step p {
+  color: rgba(255, 255, 255, 0.76);
+}
+.process-section.section-dark .process-grid {
+  background: transparent;
+  gap: 18px;
+}
+
+/* ---------- #reviews : silver + white cards with red bar ---------- */
+.reviews-section.section-silver .review-card {
+  background: var(--color-white);
+  border-left: 4px solid var(--color-red);
+}
+.reviews-section.section-silver .review-card:nth-child(2) {
+  border-left-color: var(--color-red);
+}
+.reviews-section.section-silver .review-card blockquote::before {
+  content: "«";
+  display: inline;
+  color: var(--color-red);
+  font-size: 1.25em;
+  font-family: var(--font-heading);
+  margin-right: 2px;
+}
+.reviews-section.section-silver .review-card .review-car {
+  color: var(--color-red);
+}
+@media (hover: hover) {
+  .reviews-section.section-silver .review-card {
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+  .reviews-section.section-silver .review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(230, 35, 20, 0.12);
+  }
+}
+
+/* ---------- #cta : radial glow BL ---------- */
+.final-cta.section-dark {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 20% 100%, rgba(230, 35, 20, 0.10) 0%, transparent 60%),
+    var(--color-black);
+}
+.final-cta .lead-form {
+  background: rgba(32, 31, 33, 0.6);
+  border: 1px solid var(--color-ghost);
+}
+.final-cta .field-dark input {
+  background: #201f21;
+  border: 1px solid var(--color-ghost);
+  color: var(--color-white);
+}
+
+/* ---------- heading on dark — keep visible ---------- */
+.section-dark .section-heading h2,
+.section-dark .section-heading p {
+  color: var(--color-white);
+}
+.section-dark .section-heading p {
+  color: rgba(255, 255, 255, 0.72);
+}
+.section-silver .section-heading h2 {
+  color: var(--color-ink);
+}
+.section-silver .section-heading p {
+  color: var(--color-muted);
+}
+
+/* ---------- addons keep light + red numerics ---------- */
+.addons-section .addon-card strong {
+  color: var(--color-red);
+  font-family: var(--font-heading);
+}
+
+/* ---------- respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* script.js renders .power-fill (not .power-seg) — restore solid bar */
+.power-track {
+  height: 8px;
+  background: rgba(18, 18, 22, 0.08);
+  display: block;
+  overflow: hidden;
+}
+.power-track .power-fill {
+  display: block;
+  height: 100%;
+  background: var(--color-red);
+}
