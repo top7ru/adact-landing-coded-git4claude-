@@ -2140,7 +2140,7 @@ body.menu-open .nav-toggle span:last-child {
   color: var(--color-red);
 }
 .story-section.section-dark .story-card-kicker {
-  color: rgba(255, 255, 255, 0.58);
+  display: none;
 }
 .story-section.section-dark .section-heading h2 {
   color: var(--color-white);
