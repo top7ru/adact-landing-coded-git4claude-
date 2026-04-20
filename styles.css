@@ -81,6 +81,19 @@ section[id] {
   color: var(--color-ink);
 }
 
+.section-silver {
+  background: var(--color-silver);
+  color: var(--color-ink);
+}
+
+.eyebrow-red {
+  color: var(--color-red);
+}
+
+.eyebrow-red .eyebrow-line {
+  background: var(--color-red);
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -550,6 +563,15 @@ body.menu-open .nav-toggle span:last-child {
   line-height: 0.98;
 }
 
+.section-heading h2::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--color-red);
+  margin-top: 16px;
+}
+
 .section-heading p {
   margin: 0;
   max-width: 37rem;
@@ -591,6 +613,26 @@ body.menu-open .nav-toggle span:last-child {
   font-size: clamp(2.6rem, 4vw, 4rem);
   font-weight: 800;
   line-height: 1;
+}
+
+.section-silver .advantage-card {
+  border-left: 3px solid var(--color-red);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  background: var(--color-white);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section-silver .advantage-index {
+  color: var(--color-red);
+}
+
+@media (hover: hover) {
+  .section-silver .advantage-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(230, 35, 20, 0.12);
+  }
 }
 
 .advantage-card h3,
@@ -717,7 +759,7 @@ body.menu-open .nav-toggle span:last-child {
 }
 
 .selector-section {
-  background: var(--color-silver);
+  background: var(--color-black);
 }
 
 .selector-grid {
@@ -731,7 +773,24 @@ body.menu-open .nav-toggle span:last-child {
 }
 
 .selector-form-panel {
-  background: #fafafc;
+  background: #201F21;
+}
+
+.selector-form-panel h2,
+.selector-intro,
+.selector-note {
+  color: var(--color-white);
+}
+
+.selector-form-panel .field span {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.selector-form-panel select {
+  background: var(--color-black);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--color-white);
+  -webkit-appearance: none;
 }
 
 .selector-form-panel h2 {
@@ -944,10 +1003,19 @@ body.menu-open .nav-toggle span:last-child {
   background: var(--color-line);
 }
 
+.proof-section::before {
+  content: "";
+  display: block;
+  height: 4px;
+  background: var(--color-red);
+  width: 100%;
+}
+
 .proof-card {
   min-height: 230px;
   padding: 28px;
   background: var(--color-white);
+  border-left: 4px solid var(--color-red);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1597,6 +1665,35 @@ body.menu-open .nav-toggle span:last-child {
   line-height: 1;
 }
 
+.section-dark .story-card {
+  background: #201F21;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.section-silver .story-card {
+  border-left: 3px solid var(--color-red);
+  background: var(--color-white);
+}
+
+.power-value strong {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--color-red);
+}
+
+.section-dark .story-card-index {
+  color: var(--color-red);
+}
+
+.section-dark .story-card h3 {
+  color: var(--color-white);
+}
+
+.section-dark .story-card p,
+.section-dark .story-card-kicker {
+  color: rgba(255, 255, 255, 0.76);
+}
+
 .story-card-kicker,
 .certificate-kicker,
 .power-value span,
@@ -1643,9 +1740,14 @@ body.menu-open .nav-toggle span:last-child {
   color: var(--color-muted);
 }
 
+.certificate-section.section-dark {
+  background: var(--color-black);
+  background-image: radial-gradient(ellipse at 90% 0%, rgba(230, 35, 20, 0.08) 0%, transparent 60%);
+}
+
 .certificate-banner {
   padding: clamp(32px, 5vw, 56px);
-  background: var(--color-black);
+  background: transparent;
   color: var(--color-white);
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -1654,15 +1756,16 @@ body.menu-open .nav-toggle span:last-child {
 }
 
 .certificate-icon {
-  width: 72px;
-  height: 72px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.06);
+  display: block;
+  background: none;
   color: var(--color-red);
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: clamp(80px, 12vw, 120px);
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0.9;
+  width: auto;
+  height: auto;
 }
 
 .certificate-copy {
@@ -1775,9 +1878,22 @@ body.menu-open .nav-toggle span:last-child {
 .included-card {
   padding: 30px;
   border: 2px solid var(--color-black);
+  border-left: 4px solid var(--color-red);
   background: var(--color-white);
   display: grid;
   gap: 20px;
+}
+
+.pricing-row strong {
+  color: var(--color-red);
+}
+
+.section-silver .review-card {
+  background: var(--color-white);
+}
+
+.section-silver .review-card:nth-child(2) {
+  border-left-color: var(--color-red);
 }
 
 .included-list {
