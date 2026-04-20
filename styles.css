@@ -2526,15 +2526,14 @@ body.menu-open .nav-toggle span:last-child {
   }
 }
 
-/* ---- #addons: EGR (left) + DPF (right) wireframe artwork ---- */
+/* ---- #addons: DPF wireframe bleeds full height from the right ---- */
 .addons-section {
   background-image:
-    linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.92) 38%, rgba(255,255,255,0.92) 62%, rgba(255,255,255,0) 100%),
-    url('./assets/addon-left.png'),
+    linear-gradient(to right, #fff 30%, rgba(255,255,255,0.92) 46%, rgba(255,255,255,0.15) 68%, rgba(255,255,255,0) 100%),
     url('./assets/addon-right.png');
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: center, left center, right center;
-  background-size: auto, 52% auto, 52% auto;
+  background-repeat: no-repeat;
+  background-position: center, right center;
+  background-size: auto, auto 100%;
 }
 
 @media (max-width: 900px) {
