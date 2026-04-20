@@ -2493,3 +2493,19 @@ body.menu-open .nav-toggle span:last-child {
   background-size: cover;
   background-position: center right;
 }
+
+/* ---- #power section: engine image bleeds in from the right ---- */
+.power-section {
+  background-image:
+    linear-gradient(to right, #fff 36%, rgba(255,255,255,0.90) 52%, rgba(255,255,255,0.30) 72%, rgba(255,255,255,0) 100%),
+    url('./assets/engine-closeup.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, right top;
+  background-size: auto, 56% auto;
+}
+
+@media (max-width: 900px) {
+  .power-section {
+    background-image: none;
+  }
+}
