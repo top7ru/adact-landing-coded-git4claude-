@@ -9,6 +9,8 @@
   --color-muted: #6f7178;
   --color-line: rgba(18, 18, 22, 0.1);
   --color-ghost: rgba(255, 255, 255, 0.14);
+  --color-surface: #201f21;
+  --color-text-dim: rgba(255, 255, 255, 0.76);
   --color-success: #17c96b;
   --container: min(1360px, calc(100vw - 48px));
   --section-space: clamp(72px, 9vw, 128px);
@@ -615,12 +617,14 @@ body.menu-open .nav-toggle span:last-child {
   line-height: 1;
 }
 
-.section-silver .advantage-card {
-  border-left: 3px solid var(--color-red);
-  border-top: none;
-  border-right: none;
-  border-bottom: none;
+.section-silver .advantage-card,
+.section-silver .story-card {
   background: var(--color-white);
+  border: none;
+  border-left: 3px solid var(--color-red);
+}
+
+.section-silver .advantage-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -773,7 +777,7 @@ body.menu-open .nav-toggle span:last-child {
 }
 
 .selector-form-panel {
-  background: #201F21;
+  background: var(--color-surface);
 }
 
 .selector-form-panel h2,
@@ -783,7 +787,7 @@ body.menu-open .nav-toggle span:last-child {
 }
 
 .selector-form-panel .field span {
-  color: rgba(255, 255, 255, 0.76);
+  color: var(--color-text-dim);
 }
 
 .selector-form-panel select {
@@ -791,6 +795,7 @@ body.menu-open .nav-toggle span:last-child {
   border-color: rgba(255, 255, 255, 0.18);
   color: var(--color-white);
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .selector-form-panel h2 {
@@ -1003,12 +1008,8 @@ body.menu-open .nav-toggle span:last-child {
   background: var(--color-line);
 }
 
-.proof-section::before {
-  content: "";
-  display: block;
-  height: 4px;
-  background: var(--color-red);
-  width: 100%;
+.proof-section {
+  border-top: 4px solid var(--color-red);
 }
 
 .proof-card {
@@ -1666,13 +1667,8 @@ body.menu-open .nav-toggle span:last-child {
 }
 
 .section-dark .story-card {
-  background: #201F21;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.section-silver .story-card {
-  border-left: 3px solid var(--color-red);
-  background: var(--color-white);
+  background: var(--color-surface);
+  border: 1px solid var(--color-ghost);
 }
 
 .power-value strong {
@@ -1691,7 +1687,7 @@ body.menu-open .nav-toggle span:last-child {
 
 .section-dark .story-card p,
 .section-dark .story-card-kicker {
-  color: rgba(255, 255, 255, 0.76);
+  color: var(--color-text-dim);
 }
 
 .story-card-kicker,
