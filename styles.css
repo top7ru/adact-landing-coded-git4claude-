@@ -86,11 +86,11 @@ section[id] {
   color: var(--color-ink);
 }
 
-.eyebrow-red {
+.eyebrow.eyebrow-red {
   color: var(--color-red);
 }
 
-.eyebrow-red .eyebrow-line {
+.eyebrow.eyebrow-red .eyebrow-line {
   background: var(--color-red);
 }
 
