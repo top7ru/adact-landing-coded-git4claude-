@@ -1033,13 +1033,13 @@ body.menu-open .nav-toggle span:last-child {
 }
 
 .proof-value {
-  max-width: 9ch;
+  max-width: 100%;
   font-family: var(--font-heading);
-  font-size: clamp(1.9rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
   line-height: 0.95;
   text-transform: uppercase;
   letter-spacing: -0.04em;
-  text-wrap: balance;
+  white-space: nowrap;
 }
 
 .proof-card p {
