@@ -2526,4 +2526,19 @@ body.menu-open .nav-toggle span:last-child {
   }
 }
 
-/* ---- #addons: two dedicated images — reserved for egr + dpf artwork ---- */
+/* ---- #addons: EGR (left) + DPF (right) wireframe artwork ---- */
+.addons-section {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.92) 38%, rgba(255,255,255,0.92) 62%, rgba(255,255,255,0) 100%),
+    url('./assets/addon-left.png'),
+    url('./assets/addon-right.png');
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: center, left center, right center;
+  background-size: auto, 52% auto, 52% auto;
+}
+
+@media (max-width: 900px) {
+  .addons-section {
+    background-image: none;
+  }
+}
