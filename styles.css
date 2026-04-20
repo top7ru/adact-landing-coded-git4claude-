@@ -2509,3 +2509,30 @@ body.menu-open .nav-toggle span:last-child {
     background-image: none;
   }
 }
+
+/* ---- #process (dark): blueprint bleeds in from right — red wireframe on black ---- */
+.process-section.section-dark {
+  background-image:
+    linear-gradient(to right, var(--color-black) 34%, rgba(10,10,12,0.92) 48%, rgba(10,10,12,0.28) 68%, rgba(10,10,12,0) 100%),
+    url('./assets/engine-blueprint.png');
+  background-repeat: no-repeat;
+  background-position: center, right center;
+  background-size: auto, 54% auto;
+}
+
+/* ---- #addons (light): blueprint ghosted — only red wireframe shows through ---- */
+.addons-section {
+  background-image:
+    linear-gradient(to right, #fff 36%, rgba(255,255,255,0.95) 52%, rgba(255,255,255,0.68) 72%, rgba(255,255,255,0.55) 100%),
+    url('./assets/engine-blueprint.png');
+  background-repeat: no-repeat;
+  background-position: center, right center;
+  background-size: auto, 50% auto;
+}
+
+@media (max-width: 900px) {
+  .process-section.section-dark,
+  .addons-section {
+    background-image: none;
+  }
+}
