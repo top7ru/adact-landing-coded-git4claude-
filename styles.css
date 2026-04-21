@@ -2541,3 +2541,26 @@ body.menu-open .nav-toggle span:last-child {
     background-image: none;
   }
 }
+
+/* ---- Mobile polish (560px) ---- */
+@media (max-width: 560px) {
+  .telemetry-a,
+  .telemetry-b {
+    display: none;
+  }
+
+  .hero-car {
+    right: 0;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .selector-panel,
+  .lead-form {
+    padding: 18px;
+  }
+
+  .story-card {
+    min-height: auto;
+  }
+}
